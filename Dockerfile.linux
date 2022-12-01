@@ -1,11 +1,11 @@
-FROM oraclelinux:7
+FROM oraclelinux:8
 
 USER root:root
 WORKDIR /root/pkg-fetch/
 
-RUN yum install -y oracle-softwarecollection-release-el7
+RUN yum install -y oracle-softwarecollection-release-el8
 
-RUN yum-config-manager --enable ol7_latest ol7_optional_latest software_collections
+RUN yum-config-manager --enable ol8_latest ol8_optional_latest software_collections
 RUN yum upgrade -y
 
 RUN yum install -y \
