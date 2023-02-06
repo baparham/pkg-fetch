@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - build-all
+      - test-node19
 
 jobs:
   # arm64-alpine:
