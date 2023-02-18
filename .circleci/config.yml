@@ -11,14 +11,18 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           cache-path: ~/project/node_modules
-      - run:
-          name: Install Python 3
-          command: |
-            sudo apt-get install python3 python3-pip
+      # - run:
+      #     name: Install Python 3
+      #     command: |
+      #       sudo apt-get install python3 python3-pip
       - run:
           name: Run Build
           command: |
             yarn run build
+            which python
+            python3 --version
+            python --version
+            alias python=python3
             python --version
             gcc --version
             g++ --version
