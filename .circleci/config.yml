@@ -4,7 +4,7 @@ orbs:
 jobs:
   build-binary:
     machine:
-      image: ubuntu-2004:202101-01
+      image: "ubuntu-2004:current"
     resource_class: arm.medium
     steps:
       - checkout
@@ -15,7 +15,11 @@ jobs:
           name: Run Build
           command: |
             yarn run build
-            yarn start --node-range node18 --output dist
+            python --version
+            gcc --version
+            g++ --version
+            make --version
+            # yarn start --node-range node18 --output dist
       - store_artifacts:
           path: dist
 workflows:
