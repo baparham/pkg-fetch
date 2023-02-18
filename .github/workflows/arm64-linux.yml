@@ -70,7 +70,6 @@ jobs:
             apt-get update
             apt-get install -y --no-install-recommends wget build-essential git nodejs
             npm install -g yarn
-            yarn install
 
           # Set an output parameter `uname` for use in subsequent steps
           run: |
@@ -79,11 +78,13 @@ jobs:
             mkdir -p $CACHE
             export PKG_CACHE_PATH=$CACHE
             export PKG_IGNORE_TAG=true # prevents pkg-fetch to add a tag folder
-            ls -laR .
+            ls -laR ./*
             touch ./out/new-file
             touch ./out/new-file2
             yarn --version
             node --version
+            yarn install
+            yarn build
             yarn start --node-range node18 --output dist
 
       - name: show new files
