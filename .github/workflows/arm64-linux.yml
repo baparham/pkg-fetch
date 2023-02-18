@@ -64,8 +64,11 @@ jobs:
             --volume "${PWD}/out:/out"
 
           install: |
+            curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
             apt-get update
-            apt-get install -y --no-install-recommends wget build-essential git yarn
+            apt-get install -y --no-install-recommends wget build-essential git nodejs
+            npm install -g yarn
+            yarn install
 
           # Set an output parameter `uname` for use in subsequent steps
           run: |
