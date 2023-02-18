@@ -16,6 +16,9 @@ jobs:
       #     command: |
       #       sudo apt-get install python3 python3-pip
       - run:
+          name: "Set Python Version"
+          command: pyenv global 3.9.1
+      - run:
           name: Run Build
           command: |
             yarn run build
@@ -23,11 +26,6 @@ jobs:
             which python3
             python3 --version
             python --version
-            sudo ln -s -f /opt/circleci/.pyenv/shims/python3 /opt/circleci/.pyenv/shims/python
-            python --version
-            gcc --version
-            g++ --version
-            make --version
             # yarn start --node-range node18 --output dist
       - store_artifacts:
           path: dist
