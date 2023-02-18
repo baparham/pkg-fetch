@@ -3,6 +3,9 @@ name: Build Node binaries for Linux (arm64)
 on:
   workflow_dispatch:
   workflow_call:
+  push:
+    branches:
+      - arm-tests
 
 jobs:
   # linux:
