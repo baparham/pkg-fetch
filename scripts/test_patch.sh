@@ -8,7 +8,7 @@ fi
 
 echo "Applying patches for $node_range"
 
-command="npm run applyPatches -- --node-range $node_range --quiet-extraction"
+command="npm run applyPatches -- --node-range $node_range"
 output=$($command)
 status=$?
 

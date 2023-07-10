@@ -52,7 +52,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
     "start": "node lib-es5/bin.js",
-    "applyPatches": "node lib-es5/apply-patches.js",
+    "applyPatches": "node lib-es5/apply-patches.js --quiet-extraction",
     "printHashes": "node lib-es5/print-hashes.js",
     "updateExpected": "node lib-es5/generate-expected-shas.js"
   },
